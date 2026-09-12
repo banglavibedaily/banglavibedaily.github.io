@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://banglavibedaily.github.io/sitemap.xml

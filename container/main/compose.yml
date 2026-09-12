@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: ../../source/main
+      dockerfile: ../../container/main/Dockerfile
+    env_file:
+      - .envs/app.env
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+    ports:
+      - "${APP_PORT:-5173}:5173"
+    volumes:
+      # Live source from the host…
+      - ../../source/main:/app
+      # …but keep the container's own node_modules (built on Node 22).
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0

@@ -1,0 +1,54 @@
+@import '@fontsource/oswald/500.css';
+@import '@fontsource/oswald/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/hind-siliguri/400.css';
+@import '@fontsource/hind-siliguri/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 247 245 239;
+  --surface: 255 255 255;
+  --border: 220 227 220;
+  --text: 11 36 24;
+  --muted: 78 101 88;
+  --red: 227 11 31;
+  --green: 11 93 59;
+  --yellow: 11 93 59;
+}
+
+.dark {
+  --bg: 6 17 12;
+  --surface: 13 31 23;
+  --border: 30 58 44;
+  --text: 238 243 239;
+  --muted: 157 179 166;
+  --red: 227 11 31;
+  --green: 46 139 87;
+  --yellow: 238 226 12;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-bg text-body font-sans antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
